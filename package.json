@@ -1,0 +1,27 @@
+{
+  "name": "happy-dom-leak",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test:l:happy": "node --expose-gc ./node_modules/.bin/jest --runInBand --logHeapUsage --test-environment=@happy-dom/jest-environment",
+    "test:l:jsdom": "node --expose-gc ./node_modules/.bin/jest --runInBand --logHeapUsage --test-environment=jest-environment-jsdom",
+    "test:d:happy": "node --expose-gc ./node_modules/.bin/jest --runInBand --detectLeaks --test-environment=@happy-dom/jest-environment",
+    "test:d:jsdom": "node --expose-gc ./node_modules/.bin/jest --runInBand --detectLeaks --test-environment=jest-environment-jsdom"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@happy-dom/jest-environment": "^14.12.3",
+    "@swc/jest": "^0.2.36",
+    "@testing-library/jest-dom": "^6.4.8",
+    "@testing-library/react": "^16.0.0",
+    "jest": "^29.7.0",
+    "jest-environment-jsdom": "^29.7.0",
+    "typescript": "^5.5.4"
+  },
+  "dependencies": {
+    "react": "^18.3.1"
+  }
+}
